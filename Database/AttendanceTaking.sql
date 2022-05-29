@@ -1,6 +1,6 @@
-CREATE database AttendanceTakingFPT
+CREATE database AttendanceTaking
 
-use AttendanceTakingFPT
+use AttendanceTaking
 
 create table Class(
 	class_id int identity(1,1) primary key not null,
@@ -27,8 +27,8 @@ create table ClassRoom(
 	class_id int primary key foreign key references Class(class_id),
 	student_id int foreign key references Student(student_id)
 )
-create table Schedule(
-	Schedule_id int identity(1,1) primary key not null,
+create table Timetable(
+	Timetable_id int identity(1,1) primary key not null,
 	teacher_id int foreign key references Teacher(teacher_id),
 	subject_id int foreign key references [Subject](subject_id),
 	class_id int foreign key references ClassRoom(class_id)
@@ -38,7 +38,7 @@ create table Slot(
 	slot_name nvarchar(255)
 )
 create table Attended(
-	Schedule_id  int foreign key references Schedule(Schedule_id),
+	Timetable_id  int foreign key references Timetable(Timetable_id),
 	[Date_Attend] Date,
 	slot_id int foreign key references Slot(slot_id),
 	[status] bit,
