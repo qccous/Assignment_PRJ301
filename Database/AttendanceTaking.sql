@@ -1,46 +1,66 @@
-CREATE database AttendanceTaking
+CREATE DATABASE AttendanceTaking;
 
-use AttendanceTaking
+USE AttendanceTaking;
 
-create table Class(
-	class_id int identity(1,1) primary key not null,
-	class_name nvarchar(255)
-)
-create table [Subject](
-	subject_id int identity(1,1) primary key not null,
-	subject_name nvarchar(255),
-	total_slot int, 
-)
-create table Student(
-	student_id int identity(1,1) primary key not null,
-	student_code nvarchar(255),
-	student_name nvarchar(255),
-	class_code int foreign key references Class(class_id),
-	student_image nvarchar(255)
-)
-create table Teacher(
-	teacher_id int identity(1,1) primary key not null,
-	teacher_name nvarchar(255),
-	teacher_code nvarchar(255)
-)
-create table ClassRoom(
-	class_id int primary key foreign key references Class(class_id),
-	student_id int foreign key references Student(student_id)
-)
-create table Timetable(
-	Timetable_id int identity(1,1) primary key not null,
-	teacher_id int foreign key references Teacher(teacher_id),
-	subject_id int foreign key references [Subject](subject_id),
-	class_id int foreign key references ClassRoom(class_id)
-)
-create table Slot(
-	slot_id int identity(1,1) primary key not null,
-	slot_name nvarchar(255)
-)
-create table Attended(
-	Timetable_id  int foreign key references Timetable(Timetable_id),
-	[Date_Attend] Date,
-	slot_id int foreign key references Slot(slot_id),
-	[status] bit,
-	comment nvarchar(255)
-)
+CREATE TABLE Class
+(
+    class_id INT IDENTITY(1, 1) PRIMARY KEY NOT NULL,
+    class_name NVARCHAR(255)
+);
+CREATE TABLE [Subject]
+(
+    subject_id INT IDENTITY(1, 1) PRIMARY KEY NOT NULL,
+    subject_name NVARCHAR(255),
+    total_slot INT,
+);
+CREATE TABLE Student
+(
+    student_id INT IDENTITY(1, 1) PRIMARY KEY NOT NULL,
+    student_code NVARCHAR(255),
+    student_name NVARCHAR(255),
+    class_code INT
+        FOREIGN KEY REFERENCES Class (class_id),
+    student_address NVARCHAR(255),
+    student_username NVARCHAR(255),
+    student_password NVARCHAR(255)
+);
+CREATE TABLE Teacher
+(
+    teacher_id INT IDENTITY(1, 1) PRIMARY KEY NOT NULL,
+    teacher_name NVARCHAR(255),
+    teacher_code NVARCHAR(255),
+    teacher_username NVARCHAR(255),
+    teacher_password NVARCHAR(255)
+);
+CREATE TABLE ClassRoom
+(
+    class_id INT PRIMARY KEY
+        FOREIGN KEY REFERENCES Class (class_id),
+    student_id INT
+        FOREIGN KEY REFERENCES Student (student_id)
+);
+CREATE TABLE Timetable
+(
+    Timetable_id INT IDENTITY(1, 1) PRIMARY KEY NOT NULL,
+    teacher_id INT
+        FOREIGN KEY REFERENCES Teacher (teacher_id),
+    subject_id INT
+        FOREIGN KEY REFERENCES [Subject] (subject_id),
+    class_id INT
+        FOREIGN KEY REFERENCES ClassRoom (class_id)
+);
+CREATE TABLE Slot
+(
+    slot_id INT IDENTITY(1, 1) PRIMARY KEY NOT NULL,
+    slot_name NVARCHAR(255)
+);
+CREATE TABLE Attended
+(
+    Timetable_id INT
+        FOREIGN KEY REFERENCES Timetable (Timetable_id),
+    [Date_Attend] DATE,
+    slot_id INT
+        FOREIGN KEY REFERENCES Slot (slot_id),
+    [status] BIT,
+    comment NVARCHAR(255)
+);
