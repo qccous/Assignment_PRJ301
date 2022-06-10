@@ -12,6 +12,15 @@ public class Classroom {
     private int class_id;
     private int  student_id;
 
+    public Classroom() {
+    }
+
+    public Classroom(int class_id, int student_id) {
+        this.class_id = class_id;
+        this.student_id = student_id;
+    }
+    
+
     public int getClass_id() {
         return class_id;
     }

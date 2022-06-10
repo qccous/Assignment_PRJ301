@@ -15,6 +15,18 @@ public class Teacher {
     private String teacher_username;
     private String teacher_password;
 
+    public Teacher() {
+    }
+
+    public Teacher(int teacher_id, String teacher_name, String teacher_code, String teacher_username, String teacher_password) {
+        this.teacher_id = teacher_id;
+        this.teacher_name = teacher_name;
+        this.teacher_code = teacher_code;
+        this.teacher_username = teacher_username;
+        this.teacher_password = teacher_password;
+    }
+    
+
     public int getTeacher_id() {
         return teacher_id;
     }

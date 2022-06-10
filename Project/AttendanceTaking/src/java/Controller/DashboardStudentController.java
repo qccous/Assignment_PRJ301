@@ -4,21 +4,18 @@
  */
 package Controller;
 
-import Model.Student;
-import dal.LoginDAO;
 import java.io.IOException;
 import java.io.PrintWriter;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import jakarta.servlet.http.HttpSession;
 
 /**
  *
  * @author Kuyet
  */
-public class LoginController extends HttpServlet {
+public class DashboardStudentController extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -37,10 +34,10 @@ public class LoginController extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet LoginController</title>");
+            out.println("<title>Servlet DashboardStudentController</title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet LoginController at " + request.getContextPath() + "</h1>");
+            out.println("<h1>Servlet DashboardStudentController at " + request.getContextPath() + "</h1>");
             out.println("</body>");
             out.println("</html>");
         }
@@ -58,7 +55,7 @@ public class LoginController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        request.getRequestDispatcher("login.jsp").forward(request, response);
+        request.getRequestDispatcher("dashboard.jsp").forward(request, response);
     }
 
     /**
@@ -72,19 +69,7 @@ public class LoginController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        String username = request.getParameter("username");
-        String password = request.getParameter("password");
-        LoginDAO loginDao = new LoginDAO();
-        Student s = loginDao.checkStudentLogin(username, password);
-        if (s == null) {
-            String err= "Tên đăng nhập hoặc mật khẩu không đúng!";
-            request.setAttribute("err", err);
-            request.getRequestDispatcher("login.jsp").forward(request, response);
-        }else{
-            HttpSession session = request.getSession(true);
-            session.setAttribute("student", s);
-            response.sendRedirect("dashboard");
-        }
+        processRequest(request, response);
     }
 
     /**

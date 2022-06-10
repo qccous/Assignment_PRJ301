@@ -17,6 +17,20 @@ public class Student {
     private String student_username;
     private String student_password;
 
+    public Student() {
+    }
+
+    public Student(int student_id, String student_code, String student_name, int class_code, String student_address, String student_username, String student_password) {
+        this.student_id = student_id;
+        this.student_code = student_code;
+        this.student_name = student_name;
+        this.class_code = class_code;
+        this.student_address = student_address;
+        this.student_username = student_username;
+        this.student_password = student_password;
+    }
+
+    
     public int getStudent_id() {
         return student_id;
     }
