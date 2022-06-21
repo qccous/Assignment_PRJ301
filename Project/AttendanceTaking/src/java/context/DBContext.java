@@ -20,7 +20,7 @@ public class DBContext {
 
     
     private final String serverName = "DESKTOP-C8KGSPL\\SQLEXPRESS";
-    private final String dbName = "Accounts";
+    private final String dbName = "AttendanceTaking";
     private final String portNumber = "1433";
     private final String userID = "sa";
     private final String password = "123456";

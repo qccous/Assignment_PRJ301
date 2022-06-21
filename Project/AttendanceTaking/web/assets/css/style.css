@@ -1,0 +1,156 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : Jun 21, 2022, 10:35:38 PM
+    Author     : Kuyet
+*/
+@import url('https://fonts.googleapis.com/css?family=Caveat+Brush|Ubuntu:400,700&display=swap');
+
+* {
+	box-sizing: border-box;
+        text-align: center;
+}
+
+body {
+	font-family: 'Ubuntu', sans-serif;
+}
+
+button {
+	background-color: #da42f5;
+	border: none;
+	padding: 1rem 2rem;
+	color: white;
+	font-size: 1.2rem;
+	
+	border-radius: 0.4rem;
+	margin-right: 1rem;
+	
+	&:hover,
+	&:focus {
+		background-color: darken(#da42f5, 20%);
+	}
+	
+	&.clear-button {
+		background-color: #67f5dd;
+		color: black;
+		
+		&:hover,
+	&:focus {
+		background-color: darken(#67f5dd, 20%);
+	}
+	}
+}
+
+.button-wrapper {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+table {
+	text-align: left;
+	border-collapse: collapse;
+}
+
+th,
+td {
+	vertical-align: top;
+	padding: 0.75rem;
+}
+
+td {
+	
+	font-size: 1.2rem;
+	border: 3px solid;
+	min-width: 10rem;
+	
+	
+	
+	&[data-cell] {
+		height: 10rem;
+	}
+}
+
+
+
+
+
+thead {
+	th {
+		border-right: 3px solid;
+	}
+}
+
+tbody {
+	th {
+		border-top: 3px solid;
+	}
+	
+	tr:last-child {
+		th {
+			border-bottom: 3px solid;
+		}
+	}
+}
+
+.wrapper {
+	max-width: 90rem;
+	padding: 1rem 2rem;
+	margin: 0 auto;
+}
+
+.activity {
+	width: 8rem;
+	min-height: 8rem;
+	display: block;
+	hyphens: auto;
+	padding: 0.5rem;
+	
+	text-align: center;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	box-shadow: 0.2rem 0.2rem 0.75rem rgba(0, 0, 0, 0.2);
+	
+	font-size: 1.2rem;
+	transform: rotate(var(--r, -2deg));
+}
+
+.activities {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	flex: 1 1 auto;
+	display: grid;
+	grid-template-columns: repeat(3, 8rem);
+	gap: 1rem;
+	
+	li {
+		min-height: 8rem;
+		display: block;
+		hyphens: auto;
+		text-align: center;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		
+		font-size: 1.2rem;
+	}
+	
+	@media (min-width: 85rem) {
+		max-width: 40rem;
+		margin-left: auto;
+	}
+}
+
+.grid {
+	margin-top: 2rem;
+	
+	@media (min-width: 85rem) {
+		display: grid;
+		grid-template-columns: 40rem 1fr;
+		gap: 2rem;
+		align-items: start;
+	}
+}
