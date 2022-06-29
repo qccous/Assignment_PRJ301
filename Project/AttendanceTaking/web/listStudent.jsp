@@ -19,38 +19,10 @@
     </head>
     <body>
         <!--begin of menu-->
-        <nav class="navbar navbar-expand-md navbar-dark bg-dark">   
-            <div class="container">
-                <a class="navbar-brand" href="home">Schedule</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-
-                <div class="collapse navbar-collapse justify-content-end" id="navbarsExampleDefault">
-                    <ul class="navbar-nav m-auto">
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Manager Admin</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Hello Alias</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="${pageContext.request.contextPath }/login?action=logout">Logout</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Login</a>
-                        </li>
-                    </ul>
-                    </form>
-                </div>
-            </div>
-        </nav>
-        <h1>Activities for ...(Sonnt)</h1>
-        <div><h4>Select a class <select>
-                    <c:forEach var = "i" begin = "1" end = "4">
-                        <option>SE160${i}</option>
-                    </c:forEach>
-                </select> </h4></div>
+        <h1>Attendance status</h1>
+      
+        <div style="margin-left: 68px" class="col-3">
+            <button style="width: 250px" type="button" class="btn btn-primary">Edit attendance status</button></div>
         <div class="container">
             <div class="timetable-img text-center">
                 <img src="img/content/timetable.png" alt="">
@@ -78,8 +50,8 @@
                             </td>
 
                             <td>
-                                <input type="radio" name="1" checked />attend
-                                <input type="radio" name="1" />absent
+                                <input type="radio" name="1" "  />Attend
+                                <input type="radio" name="1" checked/>Absent
                             </td>
                         </tr>
                         <tr>
@@ -93,8 +65,8 @@
                             </td>
 
                             <td>
-                                <input type="radio" name="2" checked />attend
-                                <input type="radio" name="2" />absent
+                                <input type="radio" name="2"  />Attend
+                                <input type="radio" name="1" checked/>Absent
                             </td>
                         </tr>
                         <tr>
@@ -108,8 +80,8 @@
                             </td>
 
                             <td>
-                                <input type="radio" name="4" checked />attend
-                                <input type="radio" name="4" />absent
+                                <input type="radio" name="4"  />Attend
+                                <input type="radio" name="4" checked/>Absent
                             </td>
                         </tr>
                         <tr>
@@ -123,8 +95,8 @@
                             </td>
 
                             <td>
-                                <input type="radio" name="5" checked />attend
-                                <input type="radio" name="5" />absent
+                                <input type="radio" name="5"  />Attend
+                                <input type="radio" name="5" checked/>Absent
                             </td>
                         </tr>
                         <tr>
@@ -138,23 +110,18 @@
                             </td>
 
                             <td>
-                                <input type="radio" name="6" checked />attend
-                                <input type="radio" name="6" />absent
+                                <input type="radio" name="6"  />Attend
+                                <input type="radio" name="6" checked/>Absent
                             </td>
                         </tr>
-
-
                     </tbody>
                 </table>
             </div>
             <div class="row justify-content-center">
-                <div style="margin-left: 68px" class="col-3">
-                    <button style="width: 100px" type="button" class="btn btn-primary">Edit</button>
-
+                <div style="margin-left: 68px" class="col-3">                  
                     <button style="margin-left: 12px;width: 100px" type="button" class="btn btn-primary">Save</button>
                 </div>
             </div>
-
         </div>
     </body>
 </html>

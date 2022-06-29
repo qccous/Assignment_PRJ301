@@ -22,6 +22,11 @@
      
         <h1 style="text-align: center">Timetable</h1>
         <h3>Select a term, course ...</h3>
+        </select><BR><br>
+                                User  <select>
+                                        <option>Lecture</option>
+                                        <option>Student</option>
+                                </select>
         <div class="container">
             <div class="timetable-img text-center">
                 <img src="img/content/timetable.png" alt="">
@@ -44,7 +49,7 @@
                             <th class="text-uppercase">Thursday</th>
                             <th class="text-uppercase">Friday</th>
                             <th class="text-uppercase">Saturday</th>
-                            <th class="text-uppercase">Sunday</th>
+                  
                         </tr>
                         <tr>
                             <th>03/01</th>
@@ -53,162 +58,169 @@
                             <th>06/01</th><!-- comment -->
                             <th>07/01</th>
                             <th>08/01</th><!-- comment -->
-                            <th>09/01</th>
+                     
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td class="align-middle">slot1</td>
+                            <td class="align-middle">Slot1</br>7:30-9:00</td>
                             <td>
-                                <span class="bg-sky padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom  font-size16 xs-font-size13">Dance</span>
-                                <div class="margin-10px-top font-size14">9:00-10:00</div>
-                                <div class="font-size13 text-light-gray">Ivana Wong</div>
+                                <span class="bg-sky padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom  font-size16 xs-font-size13">PRJ301</span>
+                                <div class="margin-10px-top font-size14">- SE1610</div>
+                                <div class="font-size13 text-light-gray" style="color: green; text-decoration: underline">(Present)</div>
                             </td>
                             <td>
-                                <span class="bg-green padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom  font-size16  xs-font-size13">Yoga</span>
-                                <div class="margin-10px-top font-size14">9:00-10:00</div>
-                                <div class="font-size13 text-light-gray">Marta Healy</div>
+                                <span class="bg-green padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom  font-size16  xs-font-size13">PRN211</span>
+                                <div class="margin-10px-top font-size14">- SE1610</div>
+                                <div class="font-size13 text-light-gray"style="color: green; text-decoration: underline">(Present)</div>
                             </td>
 
                             <td>
-                                <span class="bg-yellow padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom  font-size16  xs-font-size13">Music</span>
-                                <div class="margin-10px-top font-size14">9:00-10:00</div>
-                                <div class="font-size13 text-light-gray">Ivana Wong</div>
+                                <span class="bg-yellow padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom  font-size16  xs-font-size13">PRJ301</span>
+                                <div class="margin-10px-top font-size14">- SE1606</div>
+                                <div class="font-size13 text-light-gray"style="color: green; text-decoration: underline">(Present)</div>
                             </td>
                             <td>
-                                <span class="bg-sky padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom  font-size16  xs-font-size13">Dance</span>
-                                <div class="margin-10px-top font-size14">9:00-10:00</div>
-                                <div class="font-size13 text-light-gray">Ivana Wong</div>
+                                <span class="bg-sky padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom  font-size16  xs-font-size13">PRN211</span>
+                                <div class="margin-10px-top font-size14">- SE1606</div>
+                                <div class="font-size13 text-light-gray"style="color: green; text-decoration: underline">(Present)</div>
+                            </td>
+                            <td>
+                                <span class="bg-purple padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom  font-size16  xs-font-size13">PRJ301</span>
+                                <div class="margin-10px-top font-size14">- SE1606</div>
+                                <div class="font-size13 text-light-gray"style="color: green; text-decoration: underline">(Present)</div>
+                            </td>
+                            <td>
+                                <span class="bg-pink padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom  font-size16  xs-font-size13">PRN211</span>
+                                <div class="margin-10px-top font-size14">- SE1606</div>
+                                <div class="font-size13 text-light-gray"style="color: green; text-decoration: underline">(Present)</div>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td class="align-middle">Slot2</br>9:10-10:40</td>
+                            <td>
+                                <span class="bg-yellow padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom  font-size16  xs-font-size13">PRJ301</span>
+                                <div class="margin-10px-top font-size14">- SE1610</div>
+                                <div class="font-size13 text-light-gray"style="color: green; text-decoration: underline">(Present)</div>
+                            </td>
+                            <td class="bg-light-gray">
+
+                            </td>
+                            <td>
+                                <span class="bg-purple padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom  font-size16  xs-font-size13">SWT301</span>
+                                <div class="margin-10px-top font-size14">- SE1606</div>
+                                <div class="font-size13 text-light-gray"style="color: green; text-decoration: underline">(Present)</div>
+                            </td>
+                            <td>
+                                <span class="bg-green padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom  font-size16  xs-font-size13">SWT301</span>
+                                <div class="margin-10px-top font-size14">- SE1606</div>
+                                <div class="font-size13 text-light-gray"style="color: green; text-decoration: underline">(Present)</div>
+                            </td>
+                            <td>
+                                <span class="bg-pink padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom  font-size16  xs-font-size13">PRN211</span>
+                                <div class="margin-10px-top font-size14">- SE1606</div>
+                                <div class="font-size13 text-light-gray"style="color: green; text-decoration: underline">(Present)</div>
+                            </td>
+                            <td class="bg-light-gray">
+
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td class="align-middle">Slot3</br>10:50-12:20</td>
+                            <td>
+                                <span class="bg-lightred padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom  font-size16  xs-font-size13">PRJ301</span>
+                                <div class="margin-10px-top font-size14">- SE1606</div>
+                                <div class="font-size13 text-light-gray"style="color: green; text-decoration: underline">(Present)</div>
+                            </td>
+                            <td>
+                                <span class="bg-lightred padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom  font-size16  xs-font-size13">SWR302</span>
+                                <div class="margin-10px-top font-size14">- SE1606</div>
+                                <div class="font-size13 text-light-gray"style="color: green; text-decoration: underline">(Present)</div>
+                            </td>
+                            <td>
+                                <span class="bg-lightred padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom  font-size16  xs-font-size13">SWT301</span>
+                                <div class="margin-10px-top font-size14">- SE1606</div>
+                                <div class="font-size13 text-light-gray"style="color: green; text-decoration: underline">(Present)</div>
+                            </td>
+                            <td>
+                                <span class="bg-lightred padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom  font-size16  xs-font-size13">SWT301</span>
+                                <div class="margin-10px-top font-size14">- SE1606</div>
+                                <div class="font-size13 text-light-gray"style="color: green; text-decoration: underline">(Present)</div>
+                            </td>
+                            <td>
+                                <span class="bg-lightred padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom  font-size16  xs-font-size13">SWR302</span>
+                                <div class="margin-10px-top font-size14">- SE1606</div>
+                                <div class="font-size13 text-light-gray"style="color: green; text-decoration: underline">(Present)</div>
+                            </td>
+                            <td>
+                                <span class="bg-lightred padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom  font-size16  xs-font-size13">SWT301</span>
+                                <div class="margin-10px-top font-size14">- SE1606</div>
+                               <div class="font-size13 text-light-gray"style="color: red; text-decoration: underline">(Not yet)</div>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td class="align-middle">Slot 4</br>12:50-14:20</td>
+                            <td class="bg-light-gray">
+
                             </td>
                             <td>
                                 <span class="bg-purple padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom  font-size16  xs-font-size13">Art</span>
-                                <div class="margin-10px-top font-size14">9:00-10:00</div>
-                                <div class="font-size13 text-light-gray">Kate Alley</div>
+                                <div class="margin-10px-top font-size14">- SE1606</div>
+                                <div class="font-size13 text-light-gray"style="color: green; text-decoration: underline">(Present)</div>
                             </td>
                             <td>
-                                <span class="bg-pink padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom  font-size16  xs-font-size13">English</span>
-                                <div class="margin-10px-top font-size14">9:00-10:00</div>
-                                <div class="font-size13 text-light-gray">James Smith</div>
+                                <span class="bg-sky padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom  font-size16  xs-font-size13">SWT301</span>
+                                <div class="margin-10px-top font-size14">- SE1606</div>
+                                <div class="font-size13 text-light-gray"style="color: green; text-decoration: underline">(Present)</div>
+                            </td>
+                            <td>
+                                <span class="bg-yellow padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom  font-size16  xs-font-size13">SWR302</span>
+                                <div class="margin-10px-top font-size14">- SE1606</div>
+                                <div class="font-size13 text-light-gray"style="color: green; text-decoration: underline">(Present)</div>
+                            </td>
+                            <td class="bg-light-gray">
+
+                            </td>
+                            <td>
+                                <span class="bg-green padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom  font-size16  xs-font-size13">SWR302</span>
+                                <div class="margin-10px-top font-size14">- SE1606</div>
+                                <div class="font-size13 text-light-gray"style="color: red; text-decoration: underline">(Not yet)</div>
                             </td>
                         </tr>
 
                         <tr>
-                            <td class="align-middle">Slot1</td>
+                            <td class="align-middle">Slot 5</br>14:30-15:00</td>
                             <td>
-                                <span class="bg-yellow padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom  font-size16  xs-font-size13">Music</span>
-                                <div class="margin-10px-top font-size14">10:00-11:00</div>
-                                <div class="font-size13 text-light-gray">Ivana Wong</div>
+                                <span class="bg-pink padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom  font-size16  xs-font-size13">SWT301</span>
+                                <div class="margin-10px-top font-size14">- SE1606</div>
+                                <div class="font-size13 text-light-gray"style="color: green; text-decoration: underline">(Present)</div>
                             </td>
+                            <td>
+                                <span class="bg-yellow padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom  font-size16  xs-font-size13">SWT301</span>
+                                <div class="margin-10px-top font-size14">- SE1606</div>
+                                <div class="font-size13 text-light-gray"style="color: green; text-decoration: underline">(Present)</div>
+                            </td>
+                            
                             <td class="bg-light-gray">
 
                             </td>
                             <td>
-                                <span class="bg-purple padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom  font-size16  xs-font-size13">Art</span>
-                                <div class="margin-10px-top font-size14">10:00-11:00</div>
-                                <div class="font-size13 text-light-gray">Kate Alley</div>
+                                <span class="bg-pink padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom  font-size16  xs-font-size13">SWR302</span>
+                                <div class="margin-10px-top font-size14">- SE1606</div>
+                                <div class="font-size13 text-light-gray"style="color: green; text-decoration: underline">(Present)</div>
                             </td>
                             <td>
-                                <span class="bg-green padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom  font-size16  xs-font-size13">Yoga</span>
-                                <div class="margin-10px-top font-size14">10:00-11:00</div>
-                                <div class="font-size13 text-light-gray">Marta Healy</div>
+                                <span class="bg-green padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom  font-size16  xs-font-size13">SWR302</span>
+                                <div class="margin-10px-top font-size14">- SE1606</div>
+                                <div class="font-size13 text-light-gray"style="color: green; text-decoration: underline">(Present)</div>
                             </td>
                             <td>
-                                <span class="bg-pink padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom  font-size16  xs-font-size13">English</span>
-                                <div class="margin-10px-top font-size14">10:00-11:00</div>
-                                <div class="font-size13 text-light-gray">James Smith</div>
-                            </td>
-                            <td class="bg-light-gray">
-
-                            </td>
-                        </tr>
-
-                        <tr>
-                            <td class="align-middle">slot2</td>
-                            <td>
-                                <span class="bg-lightred padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom  font-size16  xs-font-size13">Break</span>
-                                <div class="margin-10px-top font-size14">11:00-12:00</div>
-                            </td>
-                            <td>
-                                <span class="bg-lightred padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom  font-size16  xs-font-size13">Break</span>
-                                <div class="margin-10px-top font-size14">11:00-12:00</div>
-                            </td>
-                            <td>
-                                <span class="bg-lightred padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom  font-size16  xs-font-size13">Break</span>
-                                <div class="margin-10px-top font-size14">11:00-12:00</div>
-                            </td>
-                            <td>
-                                <span class="bg-lightred padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom  font-size16  xs-font-size13">Break</span>
-                                <div class="margin-10px-top font-size14">11:00-12:00</div>
-                            </td>
-                            <td>
-                                <span class="bg-lightred padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom  font-size16  xs-font-size13">Break</span>
-                                <div class="margin-10px-top font-size14">11:00-12:00</div>
-                            </td>
-                            <td>
-                                <span class="bg-lightred padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom  font-size16  xs-font-size13">Break</span>
-                                <div class="margin-10px-top font-size14">11:00-12:00</div>
-                            </td>
-                        </tr>
-
-                        <tr>
-                            <td class="align-middle">slot3</td>
-                            <td class="bg-light-gray">
-
-                            </td>
-                            <td>
-                                <span class="bg-purple padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom  font-size16  xs-font-size13">Art</span>
-                                <div class="margin-10px-top font-size14">12:00-1:00</div>
-                                <div class="font-size13 text-light-gray">Kate Alley</div>
-                            </td>
-                            <td>
-                                <span class="bg-sky padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom  font-size16  xs-font-size13">Dance</span>
-                                <div class="margin-10px-top font-size14">12:00-1:00</div>
-                                <div class="font-size13 text-light-gray">Ivana Wong</div>
-                            </td>
-                            <td>
-                                <span class="bg-yellow padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom  font-size16  xs-font-size13">Music</span>
-                                <div class="margin-10px-top font-size14">12:00-1:00</div>
-                                <div class="font-size13 text-light-gray">Ivana Wong</div>
-                            </td>
-                            <td class="bg-light-gray">
-
-                            </td>
-                            <td>
-                                <span class="bg-green padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom  font-size16  xs-font-size13">Yoga</span>
-                                <div class="margin-10px-top font-size14">12:00-1:00</div>
-                                <div class="font-size13 text-light-gray">Marta Healy</div>
-                            </td>
-                        </tr>
-
-                        <tr>
-                            <td class="align-middle">slot4</td>
-                            <td>
-                                <span class="bg-pink padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom  font-size16  xs-font-size13">English</span>
-                                <div class="margin-10px-top font-size14">1:00-2:00</div>
-                                <div class="font-size13 text-light-gray">James Smith</div>
-                            </td>
-                            <td>
-                                <span class="bg-yellow padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom  font-size16  xs-font-size13">Music</span>
-                                <div class="margin-10px-top font-size14">1:00-2:00</div>
-                                <div class="font-size13 text-light-gray">Ivana Wong</div>
-                            </td>
-                            <td class="bg-light-gray">
-
-                            </td>
-                            <td>
-                                <span class="bg-pink padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom  font-size16  xs-font-size13">English</span>
-                                <div class="margin-10px-top font-size14">1:00-2:00</div>
-                                <div class="font-size13 text-light-gray">James Smith</div>
-                            </td>
-                            <td>
-                                <span class="bg-green padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom  font-size16  xs-font-size13">Yoga</span>
-                                <div class="margin-10px-top font-size14">1:00-2:00</div>
-                                <div class="font-size13 text-light-gray">Marta Healy</div>
-                            </td>
-                            <td>
-                                <span class="bg-yellow padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom  font-size16  xs-font-size13">Music</span>
-                                <div class="margin-10px-top font-size14">1:00-2:00</div>
-                                <div class="font-size13 text-light-gray">Ivana Wong</div>
+                                <span class="bg-yellow padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom  font-size16  xs-font-size13">PRJ301</span>
+                                <div class="margin-10px-top font-size14">- SE1606</div>
+                                <div class="font-size13 text-light-gray"style="color: red; text-decoration: underline">(Not yet)</div>
                             </td>
                         </tr>
                     </tbody>
