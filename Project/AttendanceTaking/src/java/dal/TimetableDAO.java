@@ -56,6 +56,6 @@ public class TimetableDAO {
 public static void main(String[] args) throws Exception {
         TimetableDAO tb = new TimetableDAO();
         List<Timetable> list = tb.getAllTimetable();
-        System.out.println(list.get(1).getSubjectId());
+        System.out.println(list.get(3).getTimetableDate());
     }
 }

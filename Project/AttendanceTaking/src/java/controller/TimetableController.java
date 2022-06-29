@@ -4,6 +4,7 @@
  */
 package controller;
 
+import dal.DateDAO;
 import dal.SlotDAO;
 import dal.TimetableDAO;
 import java.io.IOException;
@@ -17,6 +18,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import model.Datetime;
 import model.Slot;
 import model.Timetable;
 import model.WeekTimetable;
@@ -44,6 +46,7 @@ public class TimetableController extends HttpServlet {
             TimetableDAO sd = new TimetableDAO();
             List<Timetable> listT = new TimetableDAO().getAllTimetable();
             request.setAttribute("listT", listT);
+            request.setAttribute("date", "2022-06-23");
         } catch (Exception ex) {
             Logger.getLogger(TimetableController.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -63,15 +66,18 @@ public class TimetableController extends HttpServlet {
             throws ServletException, IOException {
         SlotDAO slotDAO = new SlotDAO();
         TimetableDAO timetableDAO = new TimetableDAO();
+        DateDAO dateDAO = new DateDAO();
         try {
             List<Slot> slotList = slotDAO.getAllSlot();
-            List<WeekTimetable> wttable = new ArrayList<WeekTimetable>();
-            
+            List<WeekTimetable> wttable = new ArrayList<WeekTimetable>(); 
             List<Timetable> timetableList = timetableDAO.getAllTimetable();
             List<Date> listDate = timetableDAO.getAllDate();
+            List<Datetime> listDatetime = dateDAO.getAllDate();
             request.setAttribute("listDate", listDate);
             request.setAttribute("slotList", slotList);
             request.setAttribute("timetableList", timetableList);
+            request.setAttribute("date", "2022-06-23");
+            request.setAttribute("datetime", listDatetime);
         } catch (Exception ex) {
             Logger.getLogger(TimetableController.class.getName()).log(Level.SEVERE, null, ex);
         }
