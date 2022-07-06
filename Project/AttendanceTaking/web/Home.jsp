@@ -5,6 +5,7 @@
 --%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%  %>
 <!DOCTYPE html>
 <html>
     <head>
@@ -19,15 +20,35 @@
     </head>
     <body>
         <!--begin of menu-->
-     
-        <h1 style="text-align: center">Timetable</h1>
+        <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+            <div class="container">
+                <a class="navbar-brand" href="home">Schedule</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse justify-content-end" id="navbarsExampleDefault">
+                    <ul class="navbar-nav m-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Manager Admin</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Hello Huu Quyet</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="${pageContext.request.contextPath }/login?action=logout">Logout</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Login</a>
+                        </li>
+                    </ul>
+                    </form>
+                </div>
+            </div>
+        </nav>
+        <h1>Activities for ...(HE152222)</h1>
         <h3>Select a term, course ...</h3>
-        </select><BR><br>
-                                User  <select>
-                                        <option>Lecture</option>
-                                        <option>Student</option>
-                                </select>
-        <div class="container">
+        <div class="container-fluid">
             <div class="timetable-img text-center">
                 <img src="img/content/timetable.png" alt="">
             </div>
@@ -36,12 +57,18 @@
                     <thead>
                         <tr class="bg-light-gray">
                             <th class="text-uppercase" rowspan="2">
-                                </select><BR><br>
-                                WEEK  <select>
-                                    <c:forEach var = "i" begin = "1" end = "5">
-                                        <option value="1">03/01 To 09/01</option>
+                                YEAR  <select>
+                                    <c:forEach var = "i" begin = "2019" end = "2022">
+                                        <option>${i}</option>
                                     </c:forEach>
-                                </select>
+                                </select><BR><br>
+                                <form id="form" action="Home" method="post" >
+                                    WEEK  <select onchange="submit()" name="weekid">
+                                        <c:forEach var = "w" items="${weekly}">
+                                            <option ${w.getId()==selectedweek? "selected" :""} value="${w.getId()}">${w.getWeekTime()}</option>
+                                        </c:forEach>
+                                    </select>
+                                </form>
                             </th>
                             <th class="text-uppercase">Monday</th>
                             <th class="text-uppercase">Tuesday</th>
@@ -49,183 +76,62 @@
                             <th class="text-uppercase">Thursday</th>
                             <th class="text-uppercase">Friday</th>
                             <th class="text-uppercase">Saturday</th>
-                  
+                            <th class="text-uppercase">Sunday</th>
                         </tr>
                         <tr>
-                            <th>03/01</th>
-                            <th>04/01</th>
-                            <th>05/01</th>
-                            <th>06/01</th><!-- comment -->
-                            <th>07/01</th>
-                            <th>08/01</th><!-- comment -->
-                     
+                            <c:forEach var="d" items="${dates}">
+                                <th>${d}</th>
+                                </c:forEach>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td class="align-middle">Slot1</br>7:30-9:00</td>
-                            <td>
-                                <span class="bg-sky padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom  font-size16 xs-font-size13">PRJ301</span>
-                                <div class="margin-10px-top font-size14">- SE1610</div>
-                                <div class="font-size13 text-light-gray" style="color: green; text-decoration: underline">(Present)</div>
-                            </td>
-                            <td>
-                                <span class="bg-green padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom  font-size16  xs-font-size13">PRN211</span>
-                                <div class="margin-10px-top font-size14">- SE1610</div>
-                                <div class="font-size13 text-light-gray"style="color: green; text-decoration: underline">(Present)</div>
-                            </td>
+                        <c:forEach items="${slots}" var="slot">
+                            <tr>
+                                <td class="align-middle">Slot ${slot.id}
+                                </td>
+                                <c:choose>
+                                    <c:when test="${map.containsKey(slot.id)}">
+                                        <c:forEach items="${days}" var="day">
+                                            <c:choose>
+                                                <c:when test="${map.get(slot.id).containsKey(day)}">
+                                                    <td>
+                                                        <div ><b>${map.get(slot.id).get(day).subject}</b>  </div>
+                                                        <div>${map.get(slot.id).get(day).className}</div>
+                                                        (${slot.time}) <span style="color: ${map.get(slot.id).get(day).attend==1?"green":map.get(slot.id).get(day).attend==2?"unset":"red"}" >( ${map.get(slot.id).get(day).attend==2?"Not yet":map.get(slot.id).get(day).attend==1?"attend":"absent"})</span>
 
-                            <td>
-                                <span class="bg-yellow padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom  font-size16  xs-font-size13">PRJ301</span>
-                                <div class="margin-10px-top font-size14">- SE1606</div>
-                                <div class="font-size13 text-light-gray"style="color: green; text-decoration: underline">(Present)</div>
-                            </td>
-                            <td>
-                                <span class="bg-sky padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom  font-size16  xs-font-size13">PRN211</span>
-                                <div class="margin-10px-top font-size14">- SE1606</div>
-                                <div class="font-size13 text-light-gray"style="color: green; text-decoration: underline">(Present)</div>
-                            </td>
-                            <td>
-                                <span class="bg-purple padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom  font-size16  xs-font-size13">PRJ301</span>
-                                <div class="margin-10px-top font-size14">- SE1606</div>
-                                <div class="font-size13 text-light-gray"style="color: green; text-decoration: underline">(Present)</div>
-                            </td>
-                            <td>
-                                <span class="bg-pink padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom  font-size16  xs-font-size13">PRN211</span>
-                                <div class="margin-10px-top font-size14">- SE1606</div>
-                                <div class="font-size13 text-light-gray"style="color: green; text-decoration: underline">(Present)</div>
-                            </td>
-                        </tr>
+                                                    </td>
+                                                </c:when>
+                                                <c:otherwise>
+                                                    <td>-</td>
+                                                </c:otherwise>
+                                            </c:choose>
+                                        </c:forEach>
+                                    </c:when>
+                                    <c:otherwise>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                    </c:otherwise>
+                                </c:choose>
 
-                        <tr>
-                            <td class="align-middle">Slot2</br>9:10-10:40</td>
-                            <td>
-                                <span class="bg-yellow padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom  font-size16  xs-font-size13">PRJ301</span>
-                                <div class="margin-10px-top font-size14">- SE1610</div>
-                                <div class="font-size13 text-light-gray"style="color: green; text-decoration: underline">(Present)</div>
-                            </td>
-                            <td class="bg-light-gray">
+                            </tr>
 
-                            </td>
-                            <td>
-                                <span class="bg-purple padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom  font-size16  xs-font-size13">SWT301</span>
-                                <div class="margin-10px-top font-size14">- SE1606</div>
-                                <div class="font-size13 text-light-gray"style="color: green; text-decoration: underline">(Present)</div>
-                            </td>
-                            <td>
-                                <span class="bg-green padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom  font-size16  xs-font-size13">SWT301</span>
-                                <div class="margin-10px-top font-size14">- SE1606</div>
-                                <div class="font-size13 text-light-gray"style="color: green; text-decoration: underline">(Present)</div>
-                            </td>
-                            <td>
-                                <span class="bg-pink padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom  font-size16  xs-font-size13">PRN211</span>
-                                <div class="margin-10px-top font-size14">- SE1606</div>
-                                <div class="font-size13 text-light-gray"style="color: green; text-decoration: underline">(Present)</div>
-                            </td>
-                            <td class="bg-light-gray">
+                        </c:forEach>
 
-                            </td>
-                        </tr>
-
-                        <tr>
-                            <td class="align-middle">Slot3</br>10:50-12:20</td>
-                            <td>
-                                <span class="bg-lightred padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom  font-size16  xs-font-size13">PRJ301</span>
-                                <div class="margin-10px-top font-size14">- SE1606</div>
-                                <div class="font-size13 text-light-gray"style="color: green; text-decoration: underline">(Present)</div>
-                            </td>
-                            <td>
-                                <span class="bg-lightred padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom  font-size16  xs-font-size13">SWR302</span>
-                                <div class="margin-10px-top font-size14">- SE1606</div>
-                                <div class="font-size13 text-light-gray"style="color: green; text-decoration: underline">(Present)</div>
-                            </td>
-                            <td>
-                                <span class="bg-lightred padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom  font-size16  xs-font-size13">SWT301</span>
-                                <div class="margin-10px-top font-size14">- SE1606</div>
-                                <div class="font-size13 text-light-gray"style="color: green; text-decoration: underline">(Present)</div>
-                            </td>
-                            <td>
-                                <span class="bg-lightred padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom  font-size16  xs-font-size13">SWT301</span>
-                                <div class="margin-10px-top font-size14">- SE1606</div>
-                                <div class="font-size13 text-light-gray"style="color: green; text-decoration: underline">(Present)</div>
-                            </td>
-                            <td>
-                                <span class="bg-lightred padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom  font-size16  xs-font-size13">SWR302</span>
-                                <div class="margin-10px-top font-size14">- SE1606</div>
-                                <div class="font-size13 text-light-gray"style="color: green; text-decoration: underline">(Present)</div>
-                            </td>
-                            <td>
-                                <span class="bg-lightred padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom  font-size16  xs-font-size13">SWT301</span>
-                                <div class="margin-10px-top font-size14">- SE1606</div>
-                               <div class="font-size13 text-light-gray"style="color: red; text-decoration: underline">(Not yet)</div>
-                            </td>
-                        </tr>
-
-                        <tr>
-                            <td class="align-middle">Slot 4</br>12:50-14:20</td>
-                            <td class="bg-light-gray">
-
-                            </td>
-                            <td>
-                                <span class="bg-purple padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom  font-size16  xs-font-size13">Art</span>
-                                <div class="margin-10px-top font-size14">- SE1606</div>
-                                <div class="font-size13 text-light-gray"style="color: green; text-decoration: underline">(Present)</div>
-                            </td>
-                            <td>
-                                <span class="bg-sky padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom  font-size16  xs-font-size13">SWT301</span>
-                                <div class="margin-10px-top font-size14">- SE1606</div>
-                                <div class="font-size13 text-light-gray"style="color: green; text-decoration: underline">(Present)</div>
-                            </td>
-                            <td>
-                                <span class="bg-yellow padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom  font-size16  xs-font-size13">SWR302</span>
-                                <div class="margin-10px-top font-size14">- SE1606</div>
-                                <div class="font-size13 text-light-gray"style="color: green; text-decoration: underline">(Present)</div>
-                            </td>
-                            <td class="bg-light-gray">
-
-                            </td>
-                            <td>
-                                <span class="bg-green padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom  font-size16  xs-font-size13">SWR302</span>
-                                <div class="margin-10px-top font-size14">- SE1606</div>
-                                <div class="font-size13 text-light-gray"style="color: red; text-decoration: underline">(Not yet)</div>
-                            </td>
-                        </tr>
-
-                        <tr>
-                            <td class="align-middle">Slot 5</br>14:30-15:00</td>
-                            <td>
-                                <span class="bg-pink padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom  font-size16  xs-font-size13">SWT301</span>
-                                <div class="margin-10px-top font-size14">- SE1606</div>
-                                <div class="font-size13 text-light-gray"style="color: green; text-decoration: underline">(Present)</div>
-                            </td>
-                            <td>
-                                <span class="bg-yellow padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom  font-size16  xs-font-size13">SWT301</span>
-                                <div class="margin-10px-top font-size14">- SE1606</div>
-                                <div class="font-size13 text-light-gray"style="color: green; text-decoration: underline">(Present)</div>
-                            </td>
-                            
-                            <td class="bg-light-gray">
-
-                            </td>
-                            <td>
-                                <span class="bg-pink padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom  font-size16  xs-font-size13">SWR302</span>
-                                <div class="margin-10px-top font-size14">- SE1606</div>
-                                <div class="font-size13 text-light-gray"style="color: green; text-decoration: underline">(Present)</div>
-                            </td>
-                            <td>
-                                <span class="bg-green padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom  font-size16  xs-font-size13">SWR302</span>
-                                <div class="margin-10px-top font-size14">- SE1606</div>
-                                <div class="font-size13 text-light-gray"style="color: green; text-decoration: underline">(Present)</div>
-                            </td>
-                            <td>
-                                <span class="bg-yellow padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom  font-size16  xs-font-size13">PRJ301</span>
-                                <div class="margin-10px-top font-size14">- SE1606</div>
-                                <div class="font-size13 text-light-gray"style="color: red; text-decoration: underline">(Not yet)</div>
-                            </td>
-                        </tr>
                     </tbody>
                 </table>
             </div>
         </div>
     </body>
+    <script>
+        const form = document.getElementById("form");
+        function submit() {
+            form.submit();
+        }
+        ;
+    </script>
 </html>
