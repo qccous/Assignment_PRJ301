@@ -8,16 +8,17 @@ package Model;
  *
  * @author Kuyet
  */
-public class Slot {
-    public int id;
-    public String time;
+public class Account {
 
-    public Slot() {
+    public int id;
+    public String name;
+
+    public Account() {
     }
 
-    public Slot(int id, String time) {
+    public Account(int id, String name) {
         this.id = id;
-        this.time = time;
+        this.name = name;
     }
 
     public int getId() {
@@ -28,12 +29,12 @@ public class Slot {
         this.id = id;
     }
 
-    public String getTime() {
-        return time;
+    public String getName() {
+        return name;
     }
 
-    public void setTime(String time) {
-        this.time = time;
+    public void setName(String name) {
+        this.name = name;
     }
     
 }
