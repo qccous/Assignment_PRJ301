@@ -8,6 +8,14 @@
         <servlet-name>LoginController</servlet-name>
         <servlet-class>Controller.LoginController</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>checkAttendController</servlet-name>
+        <servlet-class>Controller.checkAttendController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>AttendController</servlet-name>
+        <servlet-class>Controller.AttendController</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>HomeController</servlet-name>
         <url-pattern>/Home</url-pattern>
@@ -15,6 +23,14 @@
     <servlet-mapping>
         <servlet-name>LoginController</servlet-name>
         <url-pattern>/login</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>checkAttendController</servlet-name>
+        <url-pattern>/checkAttend</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AttendController</servlet-name>
+        <url-pattern>/Attend</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

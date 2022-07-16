@@ -4,6 +4,8 @@
  */
 package DAO;
 
+import Model.ClassEntity;
+import Model.Date;
 import Model.Schedule;
 import Model.Slot;
 import Model.Week;
@@ -49,7 +51,17 @@ public class DAOSchedule extends DBConnect {
         return ls;
     }
 
-    public List<Week> getWeekTime() throws SQLException {
+    public List<Date> getDateTime() throws SQLException {
+        List<Date> ls = new ArrayList<>();
+        String sql = "select * from Date";
+        rs = getData(sql);
+        while (rs.next()) {
+            ls.add(new Date(rs.getInt(1), rs.getString(2)));
+        }
+        return ls;
+    }
+    
+      public List<Week> getWeekTime() throws SQLException {
         List<Week> ls = new ArrayList<>();
         String sql = "select * from Week";
         rs = getData(sql);
@@ -68,4 +80,14 @@ public class DAOSchedule extends DBConnect {
         }
         return ls;
     }
+    public List<ClassEntity> getList() throws SQLException {
+        List<ClassEntity> ls = new ArrayList<>();
+        String sql = "select * from Class";
+        rs = getData(sql);
+        while (rs.next()) {
+            ls.add(new ClassEntity(rs.getInt(1), rs.getString(2)));
+        }
+        return ls;
+    }
+   
 }
