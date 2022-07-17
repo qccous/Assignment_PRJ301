@@ -21,7 +21,7 @@
         <!--begin of menu-->
         <nav class="navbar navbar-expand-md navbar-dark bg-dark">   
             <div class="container">
-                <a class="navbar-brand" href="home">Schedule</a>
+                <a class="navbar-brand" href="Home">Schedule</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -30,9 +30,6 @@
                     <ul class="navbar-nav m-auto">
                         <li class="nav-item">
                             <a class="nav-link" href="#">Manager Admin</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Hello Alias</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="${pageContext.request.contextPath }/login?action=logout">Logout</a>
@@ -46,7 +43,6 @@
             </div>
         </nav>
         <h1>Activities for ...(Sonnt)</h1>
-
         <div class="container">
             <div class="timetable-img text-center">
                 <img src="img/content/timetable.png" alt="">

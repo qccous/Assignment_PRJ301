@@ -22,7 +22,7 @@
         <!--begin of menu-->
         <nav class="navbar navbar-expand-md navbar-dark bg-dark">
             <div class="container">
-                <a class="navbar-brand" href="home">Schedule</a>
+                <a class="navbar-brand" href="Home">Schedule</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -33,7 +33,7 @@
                             <a class="nav-link" href="#">Manager Admin</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Hello Huu Quyet</a>
+                            <a class="nav-link" href="checkAttend">Switch to Attendance taking page(For Teacher)</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="${pageContext.request.contextPath }/login?action=logout">Logout</a>
@@ -46,7 +46,7 @@
                 </div>
             </div>
         </nav>
-        <h1>Activities for ...(HE152222)</h1>
+        <h1>Activities for student (HE${user.getId()})</h1>
         <h3>Select a term, course ...</h3>
         <div class="container-fluid">
             <div class="timetable-img text-center">
